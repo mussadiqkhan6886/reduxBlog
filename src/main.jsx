@@ -1,13 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { Provider } from 'react-redux'
-import {store} from "./app/Store.js"
-import { fetchUsers } from './features/users/usersSlice.js'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React, { StrictMode } from 'react';
+import './index.css';
+import App from './App';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+import { fetchPosts } from './features/posts/postsSlice';
+import { fetchUsers } from './features/users/usersSlice';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 
-store.dispatch(fetchUsers())
+store.dispatch(fetchPosts());
+store.dispatch(fetchUsers());
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
