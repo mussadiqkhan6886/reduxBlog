@@ -20,13 +20,13 @@ const SinglePostPage = () => {
             </section>
         )
     }
-
+ 
     return (
-        <article>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-            <p className="postCredit">
-                <Link to={`/post/edit/${post.id}`}>Edit Post</Link>
+        <article className='h-[581px] pt-4 bg-gradient-to-b from-gray-800 to-purple-900 px-12'>
+            <h2 className='text-3xl font-bold text-white mb-3'>{post.title.charAt(0).toUpperCase() + post.title.slice(1)}</h2>
+            <p>{post.body.charAt(0).toUpperCase() + post.body.slice(1)}</p>
+            <p className="my-2">
+                <Link className='mr-10 text-white hover:underline' to={`/post/edit/${post.id}`}>Edit Post</Link>
                 <PostAuthor userId={post.userId} />
                 <TimeAgo timestamp={post.date} />
             </p>

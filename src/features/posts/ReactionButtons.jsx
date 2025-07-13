@@ -17,7 +17,7 @@ const ReactionButtons = ({ post }) => {
             <button
                 key={name}
                 type="button"
-                className="cursor-pointer"
+                className="cursor-pointer mr-2 hover:scale-120 transition-all duration-150"
                 onClick={() =>
                     dispatch(reactionAdded({ postId: post.id, reaction: name }))
                 }

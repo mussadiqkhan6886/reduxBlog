@@ -75,37 +75,41 @@ const EditPostForm = () => {
     }
 
     return (
-        <section>
-            <h2>Edit Post</h2>
-            <form>
-                <label htmlFor="postTitle">Post Title:</label>
+        <section className="h-[581px] shadow-gray-950 py-6 bg-gradient-to-b from-gray-800 to-purple-900 flex flex-col items-center px-10">
+        <h2 className="text-3xl text-white font-semibold mb-5">Edit Post</h2>
+            <form className="flex flex-col justify-between items-center h-full w-full ">
+                <label className="text-white mb-2" htmlFor="postTitle">Post Title:</label>
                 <input
+                className="w-full md:w-[50%] border-b shadow-xl bg-purple-950   p-1 px-4 outline-none text-xl "
                     type="text"
                     id="postTitle"
                     name="postTitle"
                     value={title}
                     onChange={onTitleChanged}
                 />
-                <label htmlFor="postAuthor">Author:</label>
-                <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
+                <label className="text-white mr-5" htmlFor="postAuthor">Author:</label>
+                <select className="border-b shadow-xl bg-purple-950 p-2 outline-none w-full md:w-[50%]" id="postAuthor" value={userId} onChange={onAuthorChanged}>
                     <option value=""></option>
                     {usersOptions}
                 </select>
-                <label htmlFor="postContent">Content:</label>
+               <label className="text-white" htmlFor="postContent">Content:</label>
                 <textarea
+                rows={4}
+                className="border-b shadow-xl bg-purple-950 w-full md:w-[50%] outline-none p-2 mt-2"
                     id="postContent"
                     name="postContent"
                     value={content}
                     onChange={onContentChanged}
                 />
                 <button
+                className="border py-2 w-full md:w-[50%]  not-disabled:bg-purple-950 not-disabled:cursor-pointer not-disabled:text-white"
                     type="button"
                     onClick={onSavePostClicked}
                     disabled={!canSave}
                 >
                     Save Post
                 </button>
-                <button className="deleteButton"
+                <button className="bg-red-600  w-full md:w-[50%] border p-2 text-black"
                     type="button"
                     onClick={onDeletePostClicked}
                 >

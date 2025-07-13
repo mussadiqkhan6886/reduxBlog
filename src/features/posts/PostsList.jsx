@@ -18,7 +18,7 @@ const PostsList = () => {
     }
 
     return (
-        <section>
+        <section className="p-4 bg-gradient-to-b from-gray-800 to-purple-900 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {content}
         </section>
     )

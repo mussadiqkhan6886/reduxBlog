@@ -44,36 +44,47 @@ const AddPostForm = () => {
     }
 
     const usersOptions = users.map(user => (
-        <option key={user.id} value={user.id}>
+        <option className="bg-black" key={user.id} value={user.id}>
             {user.name}
         </option>
     ))
 
     return (
-        <section>
-            <h2>Add a New Post</h2>
-            <form>
-                <label htmlFor="postTitle">Post Title:</label>
+        <section className="h-[581px] shadow-gray-950 py-6 bg-gradient-to-b from-gray-800 to-purple-900 flex flex-col items-center px-10 ">
+            <h2 className="text-3xl text-white font-semibold mb-5">Add a New Post</h2>
+            <form className="flex flex-col justify-between items-center h-full w-full">
+                
+                <label className="text-white mb-2" htmlFor="postTitle">Post Title:</label>
                 <input
+                className="w-full md:w-[50%] border-b shadow-xl bg-purple-950   p-1 px-4 outline-none text-xl"
+                autoComplete="off"
                     type="text"
                     id="postTitle"
                     name="postTitle"
                     value={title}
                     onChange={onTitleChanged}
                 />
-                <label htmlFor="postAuthor">Author:</label>
-                <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
-                    <option value=""></option>
+                
+                
+                <label className="text-white mr-5" htmlFor="postAuthor">Author:</label>
+                <select className="border-b w-full md:w-[50%] shadow-xl bg-purple-950 p-2 outline-none" id="postAuthor" value={userId} onChange={onAuthorChanged}>
+                    <option value="">Choose Author</option>
                     {usersOptions}
                 </select>
-                <label htmlFor="postContent">Content:</label>
+                
+                
+                <label className="text-white" htmlFor="postContent">Content:</label>
                 <textarea
+                rows={4}
+                className="border-b shadow-xl bg-purple-950 w-full md:w-[50%] outline-none p-2 mt-2"
                     id="postContent"
                     name="postContent"
                     value={content}
                     onChange={onContentChanged}
                 />
+                
                 <button
+                className="border w-full md:w-[50%] py-2 not-disabled:bg-purple-950 not-disabled:cursor-pointer not-disabled:text-white"
                     type="button"
                     onClick={onSavePostClicked}
                     disabled={!canSave}
