@@ -17,7 +17,7 @@ const ReactionButtons = ({ post }) => {
             <button
                 key={name}
                 type="button"
-                className="reactionButton"
+                className="cursor-pointer"
                 onClick={() =>
                     dispatch(reactionAdded({ postId: post.id, reaction: name }))
                 }
